@@ -43,15 +43,13 @@ return {
       },
       "nvim-neotest/neotest-python",
     },
-    opts = {
-      adapters = {
-        ["neotest-python"] = {
-          -- Here you can specify the settings for the adapter, i.e.
-          runner = "pytest",
-          -- python = ".venv/bin/python",
+    opts = function() 
+      return { 
+        adapters = {
+          require "neotest-python"
         },
       },
-    },
+    end,
     config = function(_, opts)
       vim.diagnostic.config({
         virtual_text = {
@@ -69,8 +67,5 @@ return {
     optional = true,
     ---@type CatppuccinOptions
     opts = { integrations = { neotest = true } },
-  },
-  {
-    "nvim-neotest/neotest-python"
   },
 }

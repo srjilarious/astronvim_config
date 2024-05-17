@@ -13,6 +13,7 @@ return {
       "elixir",
       "eex",
       "heex",
+      "python",
       "verilog",
       "zig"
       -- add more arguments for adding more treesitter parsers

@@ -171,7 +171,7 @@ vim.api.nvim_create_autocmd("DirChanged", {
 
 -- Force normal mode so that double click doesn't select a file.
 vim.api.nvim_create_autocmd('BufEnter', {
-  pattern = 'NeoTree*',
+  pattern = 'neo-tree*',
   callback = function()
     vim.cmd('stopinsert') -- Forces to normal mode
   end,
