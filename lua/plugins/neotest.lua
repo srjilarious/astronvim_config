@@ -48,7 +48,7 @@ return {
         adapters = {
           require "neotest-python"
         },
-      },
+      }
     end,
     config = function(_, opts)
       vim.diagnostic.config({
