@@ -43,8 +43,8 @@ return {
       },
       "nvim-neotest/neotest-python",
     },
-    opts = function() 
-      return { 
+    opts = function()
+      return {
         adapters = {
           require "neotest-python"
         },
