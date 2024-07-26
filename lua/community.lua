@@ -8,7 +8,5 @@ if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 return {
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.pack.lua" },
-  { import = "astrocommunity.diagnostics.lsp_lines-nvim"},
-  { import = "astrocommunity.lsp.lsp-signature-nvim"},
   -- import/override with your plugins folder
 }
