@@ -113,6 +113,7 @@ return {
 
   { "Mofiqul/vscode.nvim", lazy = false, 
     opts = {
+        disable_nvimtree_bg = false,
         color_overrides = {
           vscBack = '#0a0a0a',
           vscPopupBack = '#141414',

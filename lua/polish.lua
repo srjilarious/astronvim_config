@@ -199,3 +199,34 @@ vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 vim.opt.expandtab = true
 vim.opt.softtabstop = 4
+
+-- Fix the expander background in NeoTree
+local hl = vim.api.nvim_set_hl
+local c = require('vscode.colors').get_colors
+
+-- Function to apply your highlight changes
+local function apply_highlight()
+  local current_colorscheme = vim.g.colors_name
+  if current_colorscheme == 'vscode' then
+    local colors = c()
+    hl(0, 'NeoTreeIndentMarker', { fg = colors.vscLineNumber, bg = 'NONE' })
+  end
+end
+
+-- Apply the highlight on startup
+apply_highlight()
+
+-- Apply the highlight whenever the colorscheme changes
+vim.api.nvim_create_autocmd('ColorScheme', {
+  pattern = '*',
+  callback = function()
+      apply_highlight()
+  end,
+})
+
+
+local hl = vim.api.nvim_set_hl
+local c = require('vscode.colors').get_colors()
+local isDark = vim.o.background == 'dark'
+hl(0, 'NeoTreeIndentMarker', { fg = c.vscLineNumber, bg = 'NONE' })
+
